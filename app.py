@@ -137,7 +137,8 @@ terms_file = st.file_uploader("用語集ファイル (A列に正しい用語を�
 correction_file = st.file_uploader("正誤表ファイル (A列に誤った用語、B列に正しい用語を記載したExcel):", type=["xlsx"])
 kanji_file = st.file_uploader("利用漢字表ファイル (A列にひらがな、B列に漢字を記載したExcel):", type=["xlsx"])
 
-# Dify アプリケーション
+# Dify Chatbot Config を埋め込む
+st.components.v1.html("""
 <script>
  window.difyChatbotConfig = {
   token: 'rGMuWhHEu9Hcwbqe'
@@ -157,6 +158,8 @@ kanji_file = st.file_uploader("利用漢字表ファイル (A列にひらがな�
     height: 40rem !important;
   }
 </style>
+""", height=0)  # Height を 0 に設定して余白を削減
+
 
 # アップロードファイルサイズの制限 (100MB以下)
 if word_file and word_file.size > 100 * 1024 * 1024:
