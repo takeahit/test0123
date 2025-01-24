@@ -137,6 +137,27 @@ terms_file = st.file_uploader("用語集ファイル (A列に正しい用語を�
 correction_file = st.file_uploader("正誤表ファイル (A列に誤った用語、B列に正しい用語を記載したExcel):", type=["xlsx"])
 kanji_file = st.file_uploader("利用漢字表ファイル (A列にひらがな、B列に漢字を記載したExcel):", type=["xlsx"])
 
+# Dify アプリケーション
+<script>
+ window.difyChatbotConfig = {
+  token: 'rGMuWhHEu9Hcwbqe'
+ }
+</script>
+<script
+ src="https://udify.app/embed.min.js"
+ id="rGMuWhHEu9Hcwbqe"
+ defer>
+</script>
+<style>
+  #dify-chatbot-bubble-button {
+    background-color: #1C64F2 !important;
+  }
+  #dify-chatbot-bubble-window {
+    width: 24rem !important;
+    height: 40rem !important;
+  }
+</style>
+
 # アップロードファイルサイズの制限 (100MB以下)
 if word_file and word_file.size > 100 * 1024 * 1024:
     st.error("原稿ファイルのサイズが大きすぎます（100MB以下にしてください）。")
